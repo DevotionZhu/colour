@@ -38,7 +38,7 @@ from .vonkries import (chromatic_adaptation_matrix_VonKries,
                        chromatic_adaptation_VonKries)
 from .fairchild1990 import chromatic_adaptation_Fairchild1990
 from .cmccat2000 import (
-    CMCCAT2000_InductionFactors, CMCCAT2000_VIEWING_CONDITIONS,
+    InductionFactors_CMCCAT2000, VIEWING_CONDITIONS_CMCCAT2000,
     chromatic_adaptation_forward_CMCCAT2000,
     chromatic_adaptation_inverse_CMCCAT2000, chromatic_adaptation_CMCCAT2000)
 from .cie1994 import chromatic_adaptation_CIE1994
@@ -50,7 +50,7 @@ __all__ += [
 ]
 __all__ += ['chromatic_adaptation_Fairchild1990']
 __all__ += [
-    'CMCCAT2000_InductionFactors', 'CMCCAT2000_VIEWING_CONDITIONS',
+    'InductionFactors_CMCCAT2000', 'VIEWING_CONDITIONS_CMCCAT2000',
     'chromatic_adaptation_forward_CMCCAT2000',
     'chromatic_adaptation_inverse_CMCCAT2000',
     'chromatic_adaptation_CMCCAT2000'
@@ -125,14 +125,14 @@ def chromatic_adaptation(XYZ, XYZ_w, XYZ_wr, method='Von Kries', **kwargs):
     n : numeric, optional
         {:func:`colour.adaptation.chromatic_adaptation_CIE1994`},
         Noise component in fundamental primary system.
-    surround : CMCCAT2000_InductionFactors, optional
+    surround : InductionFactors_CMCCAT2000, optional
         {:func:`colour.adaptation.chromatic_adaptation_CMCCAT2000`},
         Surround viewing conditions induction factors.
     transform : unicode, optional
         {:func:`colour.adaptation.chromatic_adaptation_VonKries`},
         **{'CAT02', 'XYZ Scaling', 'Von Kries', 'Bradford', 'Sharp',
-        'Fairchild', 'CMCCAT97', 'CMCCAT2000', 'CAT02_BRILL_CAT', 'Bianco',
-        'Bianco PC'}**,
+        'Fairchild', 'CMCCAT97', 'CMCCAT2000', 'CAT02 Brill 2008',
+        'Bianco 2010', 'Bianco PC 2010'}**,
         Chromatic adaptation transform.
 
     Returns
