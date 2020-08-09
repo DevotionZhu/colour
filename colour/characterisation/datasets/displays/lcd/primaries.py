@@ -40,9 +40,9 @@ __maintainer__ = 'Colour Developers'
 __email__ = 'colour-developers@colour-science.org'
 __status__ = 'Production'
 
-__all__ = ['LCD_DISPLAY_RGB_PRIMARIES_DATA', 'LCD_DISPLAY_RGB_PRIMARIES']
+__all__ = ['DATA_MSDS_DISPLAY_PRIMARIES_LCD', 'MSDS_DISPLAY_PRIMARIES_LCD']
 
-LCD_DISPLAY_RGB_PRIMARIES_DATA = {
+DATA_MSDS_DISPLAY_PRIMARIES_LCD = {
     'Apple Studio Display': {
         380: (0.0000, 0.0000, 0.0000),
         385: (0.0000, 0.0000, 0.0000),
@@ -128,10 +128,10 @@ LCD_DISPLAY_RGB_PRIMARIES_DATA = {
     }
 }
 
-LCD_DISPLAY_RGB_PRIMARIES = CaseInsensitiveMapping({
+MSDS_DISPLAY_PRIMARIES_LCD = CaseInsensitiveMapping({
     'Apple Studio Display':
         RGB_DisplayPrimaries(
-            LCD_DISPLAY_RGB_PRIMARIES_DATA['Apple Studio Display'],
+            DATA_MSDS_DISPLAY_PRIMARIES_LCD['Apple Studio Display'],
             name='Apple Studio Display')
 })
 """
@@ -141,6 +141,6 @@ References
 ----------
 :cite:`Fairchild1998b`, :cite:`Machado2010a`
 
-LCD_DISPLAY_RGB_PRIMARIES : CaseInsensitiveMapping
+MSDS_DISPLAY_PRIMARIES_LCD : CaseInsensitiveMapping
     **{'Apple Studio Display'}**
 """

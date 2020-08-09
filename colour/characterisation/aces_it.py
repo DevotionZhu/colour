@@ -152,8 +152,8 @@ def sd_to_aces_relative_exposure_values(
 
     Examples
     --------
-    >>> from colour import COLOURCHECKER_SDS
-    >>> sd = COLOURCHECKER_SDS['ColorChecker N Ohta']['dark skin']
+    >>> from colour import SDS_COLOURCHECKER
+    >>> sd = SDS_COLOURCHECKER['ColorChecker N Ohta']['dark skin']
     >>> sd_to_aces_relative_exposure_values(sd)  # doctest: +ELLIPSIS
     array([ 0.1171814...,  0.0866360...,  0.0589726...])
     >>> sd_to_aces_relative_exposure_values(sd,
@@ -345,7 +345,7 @@ def white_balance_multipliers(sensitivities, illuminant):
 
     Parameters
     ----------
-    sensitivities : RGB_SpectralSensitivities
+    sensitivities : RGB_CameraSensitivities
          Camera *RGB* spectral sensitivities.
     illuminant : SpectralDistribution
         Illuminant spectral distribution.
@@ -394,7 +394,7 @@ def best_illuminant(RGB_w, sensitivities, illuminants):
     ----------
     RGB_w : array_like
         *RGB* white balance multipliers.
-    sensitivities : RGB_SpectralSensitivities
+    sensitivities : RGB_CameraSensitivities
          Camera *RGB* spectral sensitivities.
     illuminants : SpectralDistribution
         Illuminant spectral distributions to choose the best illuminant from.
@@ -445,7 +445,7 @@ def normalise_illuminant(illuminant, sensitivities):
     ----------
     illuminant : SpectralDistribution
         Illuminant spectral distribution.
-    sensitivities : RGB_SpectralSensitivities
+    sensitivities : RGB_CameraSensitivities
          Camera *RGB* spectral sensitivities.
 
     Returns
@@ -489,7 +489,7 @@ def training_data_sds_to_RGB(training_data, sensitivities, illuminant):
     ----------
     training_data : MultiSpectralDistributions
         Training data multi-spectral distributions.
-    sensitivities : RGB_SpectralSensitivities
+    sensitivities : RGB_CameraSensitivities
          Camera *RGB* spectral sensitivities.
     illuminant : SpectralDistribution
         Illuminant spectral distribution.
@@ -719,7 +719,7 @@ def idt_matrix(sensitivities,
 
     Parameters
     ----------
-    sensitivities : RGB_SpectralSensitivities
+    sensitivities : RGB_CameraSensitivities
          Camera *RGB* spectral sensitivities.
     illuminant : SpectralDistribution
         Illuminant spectral distribution.

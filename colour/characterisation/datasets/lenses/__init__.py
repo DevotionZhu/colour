@@ -2,6 +2,6 @@
 
 from __future__ import absolute_import
 
-from .sds import LENS_SDS
+from .sds import SDS_LENS
 
-__all__ = ['LENS_SDS']
+__all__ = ['SDS_LENS']

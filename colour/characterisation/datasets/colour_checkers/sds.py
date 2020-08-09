@@ -14,10 +14,10 @@ follows::
 The following *Colour Checkers* are available:
 
 -   :attr:`colour.characterisation.datasets.colour_checkers.sds.\
-COLORCHECKER_N_OHTA_SDS`: Measured by Ohta (1997).
+SDS_COLOURCHECKER_COLORCHECKER_N_OHTA`: Measured by Ohta (1997).
 -   :attr:`colour.characterisation.datasets.colour_checkers.sds.\
-BABELCOLOR_AVERAGE_SDS`: Average data derived from measurements of
-    30 *Colour Checker* charts.
+SDS_COLOURCHECKER_BABELCOLOR_AVERAGE`: Average data derived from measurements
+    of 30 *Colour Checker* charts.
 
 References
 ----------
@@ -52,12 +52,12 @@ __email__ = 'colour-developers@colour-science.org'
 __status__ = 'Production'
 
 __all__ = [
-    'COLORCHECKER_N_OHTA_SDS_DATA', 'COLORCHECKER_N_OHTA_SDS',
-    'BABELCOLOR_AVERAGE_SDS_DATA', 'BABELCOLOR_AVERAGE_SDS',
-    'COLOURCHECKER_SDS'
+    'DATA_SDS_COLORCHECKER_N_OHTA', 'SDS_COLOURCHECKER_COLORCHECKER_N_OHTA',
+    'DATA_SDS_BABELCOLOR_AVERAGE', 'SDS_COLOURCHECKER_BABELCOLOR_AVERAGE',
+    'SDS_COLOURCHECKER'
 ]
 
-COLORCHECKER_N_OHTA_SDS_DATA = OrderedDict((
+DATA_SDS_COLORCHECKER_N_OHTA = OrderedDict((
     ('dark skin', {
         380: 0.048,
         385: 0.051,
@@ -2052,16 +2052,16 @@ COLORCHECKER_N_OHTA_SDS_DATA = OrderedDict((
     }),
 ))
 
-COLORCHECKER_N_OHTA_SDS = OrderedDict(
+SDS_COLOURCHECKER_COLORCHECKER_N_OHTA = OrderedDict(
     (key, SpectralDistribution(value, name=key))
-    for key, value in COLORCHECKER_N_OHTA_SDS_DATA.items())
+    for key, value in DATA_SDS_COLORCHECKER_N_OHTA.items())
 """
 Measured by *Ohta (1997)*.
 
-COLORCHECKER_N_OHTA_SDS : dict
+SDS_COLOURCHECKER_COLORCHECKER_N_OHTA : dict
 """
 
-BABELCOLOR_AVERAGE_SDS_DATA = OrderedDict((
+DATA_SDS_BABELCOLOR_AVERAGE = OrderedDict((
     ('dark skin', {
         380: 0.055,
         390: 0.058,
@@ -2976,20 +2976,20 @@ BABELCOLOR_AVERAGE_SDS_DATA = OrderedDict((
     }),
 ))
 
-BABELCOLOR_AVERAGE_SDS = OrderedDict(
+SDS_COLOURCHECKER_BABELCOLOR_AVERAGE = OrderedDict(
     (key, SpectralDistribution(value, name=key))
-    for key, value in BABELCOLOR_AVERAGE_SDS_DATA.items())
+    for key, value in DATA_SDS_BABELCOLOR_AVERAGE.items())
 """
 Average data derived from measurements of 30 *Colour Checker* charts.
 
-BABELCOLOR_AVERAGE_SDS : dict
+SDS_COLOURCHECKER_BABELCOLOR_AVERAGE : dict
 """
 
-COLOURCHECKER_SDS = CaseInsensitiveMapping({
-    'BabelColor Average': BABELCOLOR_AVERAGE_SDS,
-    'ColorChecker N Ohta': COLORCHECKER_N_OHTA_SDS
+SDS_COLOURCHECKER = CaseInsensitiveMapping({
+    'BabelColor Average': SDS_COLOURCHECKER_BABELCOLOR_AVERAGE,
+    'ColorChecker N Ohta': SDS_COLOURCHECKER_COLORCHECKER_N_OHTA
 })
-COLOURCHECKER_SDS.__doc__ = """
+SDS_COLOURCHECKER.__doc__ = """
 Aggregated *Colour Checker* spectral distributions.
 
 References
@@ -2997,7 +2997,7 @@ References
 :cite:`Ohta1997a`, :cite:`BabelColor2012b`, :cite:`BabelColor2012c`,
 :cite:`MunsellColorScienceb`
 
-COLOURCHECKER_SDS : CaseInsensitiveMapping
+SDS_COLOURCHECKER : CaseInsensitiveMapping
     **{'BabelColor Average', 'ColorChecker N Ohta'}**
 
 Aliases:
@@ -3005,5 +3005,5 @@ Aliases:
 -   'babel_average': 'BabelColor Average'
 -   'cc_ohta': 'ColorChecker N Ohta'
 """
-COLOURCHECKER_SDS['babel_average'] = COLOURCHECKER_SDS['BabelColor Average']
-COLOURCHECKER_SDS['cc_ohta'] = COLOURCHECKER_SDS['ColorChecker N Ohta']
+SDS_COLOURCHECKER['babel_average'] = SDS_COLOURCHECKER['BabelColor Average']
+SDS_COLOURCHECKER['cc_ohta'] = SDS_COLOURCHECKER['ColorChecker N Ohta']

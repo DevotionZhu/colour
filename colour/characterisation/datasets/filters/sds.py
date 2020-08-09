@@ -33,9 +33,9 @@ __maintainer__ = 'Colour Developers'
 __email__ = 'colour-developers@colour-science.org'
 __status__ = 'Production'
 
-__all__ = ['FILTER_ISO_SDS_DATA', 'FILTER_ISO_SDS', 'FILTER_SDS']
+__all__ = ['DATA_SDS_FILTER_ISO', 'SDS_FILTER_ISO', 'SDS_FILTER']
 
-FILTER_ISO_SDS_DATA = {
+DATA_SDS_FILTER_ISO = {
     'ISO 7589 Diffuser': {
         350: 0.00,
         360: 0.00,
@@ -62,29 +62,29 @@ FILTER_ISO_SDS_DATA = {
     }
 }
 
-FILTER_ISO_SDS = CaseInsensitiveMapping({
+SDS_FILTER_ISO = CaseInsensitiveMapping({
     'ISO 7589 Diffuser':
         SpectralDistribution(
-            FILTER_ISO_SDS_DATA['ISO 7589 Diffuser'],
+            DATA_SDS_FILTER_ISO['ISO 7589 Diffuser'],
             name='ISO 7589 Diffuser'),
 })
-FILTER_ISO_SDS.__doc__ = """
+SDS_FILTER_ISO.__doc__ = """
 *ISO* filter spectral distributions.
 
 References
 ----------
 :cite:`ISO2002`
 
-FILTER_ISO_SDS : CaseInsensitiveMapping
+SDS_FILTER_ISO : CaseInsensitiveMapping
 """
 
-FILTER_SDS = CaseInsensitiveMapping(FILTER_ISO_SDS)
-FILTER_SDS.__doc__ = """
+SDS_FILTER = CaseInsensitiveMapping(SDS_FILTER_ISO)
+SDS_FILTER.__doc__ = """
 Aggregated filter spectral distributions.
 
 References
 ----------
 :cite:`ISO2002`
 
-FILTER_SDS : CaseInsensitiveMapping
+SDS_FILTER : CaseInsensitiveMapping
 """

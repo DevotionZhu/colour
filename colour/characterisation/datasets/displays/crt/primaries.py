@@ -36,9 +36,9 @@ __maintainer__ = 'Colour Developers'
 __email__ = 'colour-developers@colour-science.org'
 __status__ = 'Production'
 
-__all__ = ['CRT_DISPLAY_RGB_PRIMARIES_DATA', 'CRT_DISPLAY_RGB_PRIMARIES']
+__all__ = ['DATA_MSDS_DISPLAY_PRIMARIES_CRT', 'MSDS_DISPLAY_PRIMARIES_CRT']
 
-CRT_DISPLAY_RGB_PRIMARIES_DATA = {
+DATA_MSDS_DISPLAY_PRIMARIES_CRT = {
     'Typical CRT Brainard 1997': {
         380.0: (0.0025, 0.0018, 0.0219),
         385.0: (0.0017, 0.0016, 0.0336),
@@ -124,10 +124,10 @@ CRT_DISPLAY_RGB_PRIMARIES_DATA = {
     }
 }
 
-CRT_DISPLAY_RGB_PRIMARIES = CaseInsensitiveMapping({
+MSDS_DISPLAY_PRIMARIES_CRT = CaseInsensitiveMapping({
     'Typical CRT Brainard 1997':
         RGB_DisplayPrimaries(
-            CRT_DISPLAY_RGB_PRIMARIES_DATA['Typical CRT Brainard 1997'],
+            DATA_MSDS_DISPLAY_PRIMARIES_CRT['Typical CRT Brainard 1997'],
             name='Typical CRT Brainard 1997')
 })
 """
@@ -137,6 +137,6 @@ References
 ----------
 :cite:`Machado2010a`
 
-CRT_DISPLAY_RGB_PRIMARIES : CaseInsensitiveMapping
+MSDS_DISPLAY_PRIMARIES_CRT : CaseInsensitiveMapping
     **{'Typical CRT Brainard 1997'}**
 """

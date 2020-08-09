@@ -33,9 +33,9 @@ __maintainer__ = 'Colour Developers'
 __email__ = 'colour-developers@colour-science.org'
 __status__ = 'Production'
 
-__all__ = ['LENS_ISO_SDS_DATA', 'LENS_ISO_SDS', 'LENS_SDS']
+__all__ = ['DATA_SDS_LENS_ISO', 'SDS_LENS_ISO', 'SDS_LENS']
 
-LENS_ISO_SDS_DATA = {
+DATA_SDS_LENS_ISO = {
     'ISO Standard Lens': {
         350: 0.00,
         360: 0.07,
@@ -75,28 +75,28 @@ LENS_ISO_SDS_DATA = {
     }
 }
 
-LENS_ISO_SDS = CaseInsensitiveMapping({
+SDS_LENS_ISO = CaseInsensitiveMapping({
     'ISO Standard Lens':
         SpectralDistribution(
-            LENS_ISO_SDS_DATA['ISO Standard Lens'], name='ISO Standard Lens'),
+            DATA_SDS_LENS_ISO['ISO Standard Lens'], name='ISO Standard Lens'),
 })
-LENS_ISO_SDS.__doc__ = """
+SDS_LENS_ISO.__doc__ = """
 *ISO* lens spectral distributions.
 
 References
 ----------
 :cite:`ISO2002`
 
-LENS_ISO_SDS : CaseInsensitiveMapping
+SDS_LENS_ISO : CaseInsensitiveMapping
 """
 
-LENS_SDS = CaseInsensitiveMapping(LENS_ISO_SDS)
-LENS_SDS.__doc__ = """
+SDS_LENS = CaseInsensitiveMapping(SDS_LENS_ISO)
+SDS_LENS.__doc__ = """
 Aggregated lens spectral distributions.
 
 References
 ----------
 :cite:`ISO2002`
 
-LENS_SDS : CaseInsensitiveMapping
+SDS_LENS : CaseInsensitiveMapping
 """

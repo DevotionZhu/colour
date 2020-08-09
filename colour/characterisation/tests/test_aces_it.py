@@ -10,7 +10,7 @@ import os
 import unittest
 
 from colour.characterisation import (
-    ACES_RICD, CAMERA_RGB_SPECTRAL_SENSITIVITIES, COLOURCHECKER_SDS,
+    ACES_RICD, MSDS_CAMERA_SENSITIVITIES, SDS_COLOURCHECKER,
     sd_to_aces_relative_exposure_values, read_training_data_rawtoaces_v1,
     generate_illuminants_rawtoaces_v1, white_balance_multipliers,
     best_illuminant, normalise_illuminant, training_data_sds_to_RGB,
@@ -75,27 +75,27 @@ sd_to_aces_relative_exposure_values` definition.
             np.array([0.97783784, 0.97783784, 0.97783784]),
             decimal=7)
 
-        dark_skin = COLOURCHECKER_SDS['ColorChecker N Ohta']['dark skin']
+        dark_skin = SDS_COLOURCHECKER['ColorChecker N Ohta']['dark skin']
         np.testing.assert_almost_equal(
             sd_to_aces_relative_exposure_values(dark_skin),
             np.array([0.11718149, 0.08663609, 0.05897268]),
             decimal=7)
 
-        dark_skin = COLOURCHECKER_SDS['ColorChecker N Ohta']['dark skin']
+        dark_skin = SDS_COLOURCHECKER['ColorChecker N Ohta']['dark skin']
         np.testing.assert_almost_equal(
             sd_to_aces_relative_exposure_values(dark_skin,
                                                 ILLUMINANT_SDS['A']),
             np.array([0.13583991, 0.09431845, 0.05928214]),
             decimal=7)
 
-        dark_skin = COLOURCHECKER_SDS['ColorChecker N Ohta']['dark skin']
+        dark_skin = SDS_COLOURCHECKER['ColorChecker N Ohta']['dark skin']
         np.testing.assert_almost_equal(
             sd_to_aces_relative_exposure_values(
                 dark_skin, apply_chromatic_adaptation=True),
             np.array([0.11807796, 0.08690312, 0.05891252]),
             decimal=7)
 
-        dark_skin = COLOURCHECKER_SDS['ColorChecker N Ohta']['dark skin']
+        dark_skin = SDS_COLOURCHECKER['ColorChecker N Ohta']['dark skin']
         np.testing.assert_almost_equal(
             sd_to_aces_relative_exposure_values(
                 dark_skin,
@@ -452,7 +452,7 @@ class TestTrainingDataSdsToRGB(unittest.TestCase):
             decimal=7)
 
         training_data = sds_and_multi_sds_to_multi_sds(
-            COLOURCHECKER_SDS['BabelColor Average'].values())
+            SDS_COLOURCHECKER['BabelColor Average'].values())
         np.testing.assert_almost_equal(
             training_data_sds_to_RGB(training_data,
                                      CANON_EOS_5DMARK_II_RGB_SENSITIVITIES,
@@ -698,7 +698,7 @@ class TestTrainingDataSdsToXYZ(unittest.TestCase):
             decimal=7)
 
         training_data = sds_and_multi_sds_to_multi_sds(
-            COLOURCHECKER_SDS['BabelColor Average'].values())
+            SDS_COLOURCHECKER['BabelColor Average'].values())
 
         np.testing.assert_almost_equal(
             training_data_sds_to_XYZ(
@@ -836,12 +836,12 @@ class TestIdtMatrix(unittest.TestCase):
             atol=0.0001)
 
         training_data = sds_and_multi_sds_to_multi_sds(
-            COLOURCHECKER_SDS['BabelColor Average'].values())
+            SDS_COLOURCHECKER['BabelColor Average'].values())
 
         np.testing.assert_allclose(
             idt_matrix(
-                CAMERA_RGB_SPECTRAL_SENSITIVITIES['Nikon 5100 (NPL)'].copy()
-                .align(SpectralShape(400, 700, 10)),
+                MSDS_CAMERA_SENSITIVITIES['Nikon 5100 (NPL)'].copy().align(
+                    SpectralShape(400, 700, 10)),
                 AMPAS_ISO7589_STUDIO_TUNGSTEN,
                 training_data=training_data),
             np.array([

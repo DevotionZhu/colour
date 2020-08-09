@@ -148,8 +148,8 @@ from .temperature import (CCT_TO_UV_METHODS, CCT_TO_XY_METHODS, CCT_to_uv,
                           CCT_to_xy, UV_TO_CCT_METHODS, XY_TO_CCT_METHODS,
                           uv_to_CCT, xy_to_CCT)
 from .characterisation import (
-    CAMERA_RGB_SPECTRAL_SENSITIVITIES, COLOURCHECKERS, COLOURCHECKER_SDS,
-    DISPLAY_RGB_PRIMARIES, FILTER_SDS, LENS_SDS, POLYNOMIAL_EXPANSION_METHODS,
+    MSDS_CAMERA_SENSITIVITIES, CHROMATICITIES_COLOURCHECKER, SDS_COLOURCHECKER,
+    MSDS_DISPLAY_PRIMARIES, SDS_FILTER, SDS_LENS, POLYNOMIAL_EXPANSION_METHODS,
     polynomial_expansion, COLOUR_CORRECTION_MATRIX_METHODS,
     colour_correction_matrix, COLOUR_CORRECTION_METHODS, colour_correction,
     idt_matrix, sd_to_aces_relative_exposure_values)
@@ -295,8 +295,8 @@ __all__ += [
     'UV_TO_CCT_METHODS', 'XY_TO_CCT_METHODS', 'uv_to_CCT', 'xy_to_CCT'
 ]
 __all__ += [
-    'CAMERA_RGB_SPECTRAL_SENSITIVITIES', 'COLOURCHECKERS', 'COLOURCHECKER_SDS',
-    'DISPLAY_RGB_PRIMARIES', 'FILTER_SDS', 'LENS_SDS',
+    'MSDS_CAMERA_SENSITIVITIES', 'CHROMATICITIES_COLOURCHECKER',
+    'SDS_COLOURCHECKER', 'MSDS_DISPLAY_PRIMARIES', 'SDS_FILTER', 'SDS_LENS',
     'POLYNOMIAL_EXPANSION_METHODS', 'polynomial_expansion',
     'COLOUR_CORRECTION_MATRIX_METHODS', 'colour_correction_matrix',
     'COLOUR_CORRECTION_METHODS', 'colour_correction', 'idt_matrix',
@@ -702,7 +702,7 @@ API_CHANGES = {
         ],
         [
             'colour.RGB_SpectralSensitivities',
-            'colour.characterisation.RGB_SpectralSensitivities',
+            'colour.characterisation.RGB_CameraSensitivities',
         ],
         [
             'colour.RGB_to_sd_Smits1999',
@@ -1626,7 +1626,7 @@ API_CHANGES['ObjectRenamed'] = API_CHANGES['ObjectRenamed'] + [
     ],
     [
         'colour.COLOURCHECKERS_SPDS',
-        'colour.COLOURCHECKER_SDS',
+        'colour.SDS_COLOURCHECKER',
     ],
     [
         'colour.D_illuminant_relative_spd',
@@ -1810,15 +1810,19 @@ API_CHANGES['ObjectRenamed'] = API_CHANGES['ObjectRenamed'] + [
     ],
     [
         'colour.CAMERAS_RGB_SPECTRAL_SENSITIVITIES',
-        'colour.CAMERA_RGB_SPECTRAL_SENSITIVITIES',
+        'colour.MSDS_CAMERA_SENSITIVITIES',
+    ],
+    [
+        'colour.COLOURCHECKERS',
+        'colour.CHROMATICITIES_COLOURCHECKER',
     ],
     [
         'colour.COLOURCHECKERS_SDS',
-        'colour.COLOURCHECKER_SDS',
+        'colour.SDS_COLOURCHECKER',
     ],
     [
         'colour.DISPLAYS_RGB_PRIMARIES',
-        'colour.DISPLAY_RGB_PRIMARIES',
+        'colour.MSDS_DISPLAY_PRIMARIES',
     ],
     [
         'colour.Hunt_Specification',

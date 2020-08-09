@@ -105,8 +105,8 @@ Colour Rendition Charts
 .. autosummary::
     :toctree: generated/
 
-    COLOURCHECKERS
-    COLOURCHECKER_SDS
+    CHROMATICITIES_COLOURCHECKER
+    SDS_COLOURCHECKER
 
 **Ancillary Objects**
 
@@ -130,7 +130,7 @@ Cameras
     :toctree: generated/
     :template: class.rst
 
-    RGB_SpectralSensitivities
+    RGB_CameraSensitivities
 
 **Dataset**
 
@@ -141,7 +141,7 @@ Cameras
 .. autosummary::
     :toctree: generated/
 
-    CAMERA_RGB_SPECTRAL_SENSITIVITIES
+    MSDS_CAMERA_SENSITIVITIES
 
 Displays
 --------
@@ -165,7 +165,7 @@ Displays
 .. autosummary::
     :toctree: generated/
 
-    DISPLAY_RGB_PRIMARIES
+    MSDS_DISPLAY_PRIMARIES
 
 Filters
 -------
@@ -179,7 +179,7 @@ Filters
 .. autosummary::
     :toctree: generated/
 
-    FILTER_SDS
+    SDS_FILTER
 
 Lenses
 ------
@@ -193,4 +193,4 @@ Lenses
 .. autosummary::
     :toctree: generated/
 
-    LENS_SDS
+    SDS_LENS

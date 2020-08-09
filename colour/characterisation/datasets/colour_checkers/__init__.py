@@ -2,8 +2,8 @@
 
 from __future__ import absolute_import
 
-from .chromaticity_coordinates import COLOURCHECKERS, ColourChecker
-from .sds import COLOURCHECKER_SDS
+from .chromaticities import CHROMATICITIES_COLOURCHECKER, ColourChecker
+from .sds import SDS_COLOURCHECKER
 
-__all__ = ['COLOURCHECKERS', 'ColourChecker']
-__all__ += ['COLOURCHECKER_SDS']
+__all__ = ['CHROMATICITIES_COLOURCHECKER', 'ColourChecker']
+__all__ += ['SDS_COLOURCHECKER']
